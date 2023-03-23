@@ -1,11 +1,5 @@
 <template>
-  <!-- <section class="section"> -->
-
    
-     
-      <!-- <h3 class="title has-text-centered is-size-4">Blogs Array {{ cities[1].city }}</h3> -->
-       
-        <!-- card columns container: -->
           <div class="my-card-container">
           
             <template v-for="(blog) in cities" :key="blog.id">
@@ -70,24 +64,9 @@
               </div>
 
             </template>
-          
-          
-          
-          
-          </div>
-             
-               
-            
-               
-            
-            
-          
-            
+                 
+          </div>          
 
-
-
-
-  <!-- </section> -->
 </template>
 
 <script>
@@ -99,14 +78,11 @@ export default {
       default: []
     }
   },
- 
+
   methods: {
     displayId(event) {
       alert(`Card id: ${event}`);
     }
-  },
-  mounted() {
-    console.log("This is coming from CitiesCards!");
   }
 }
 
@@ -123,8 +99,6 @@ export default {
 }
 
 
-
-
 .my-card-content time {
   font-size:x-small;
 
@@ -136,9 +110,6 @@ export default {
 
 .my-card {
   height: 100%;
-  /* width: 100%; */
-
-  
 }
 
 .my-card:hover {
@@ -148,12 +119,7 @@ export default {
 }
 
 .my-card-container {
-
   display: flex;
-  /* width: 180px; */
- 
-
-
 }
 
 .card-image img {
@@ -166,20 +132,14 @@ export default {
 }
 
 .card-wrapper {
-  padding: 10px;
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px; */
-
+  padding: 20px;
 }
 
 .media-content {
- 
-  /* background-color: aquamarine; */
+
   inline-size: 100px;
   overflow-wrap: break-all;
   
 }
-
 
 </style>

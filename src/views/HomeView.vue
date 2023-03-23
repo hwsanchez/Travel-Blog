@@ -4,30 +4,21 @@
   
    
       
-          <div class="my-big-map">      
+          <div class="my-big-map mb-6 mt-4">      
             
             <div class="box">
-            
-            <MapWithVisitedLocations :cities="blogsArray" />
+             
+                <BigMap :cities="blogsArray" @popupClicked="displayDetail"/>
             
             </div>
                         
           </div>
 
-          <div class="my-title">
-            <h3 class="title has-text-centered is-size-4">Blogs Previews</h3>
-          </div>
-      
-
-
           <div class="my-cards">
-              <RouterLink  :to="'/post/' + id">
-
+              <RouterLink  :to="'/post/' + id">   
                 <CitiesCards :cities="blogsArray" @cardClicked="displayDetail"/>
-              
               </RouterLink>
-          
-          </div>
+         </div>
         
           
   
@@ -40,7 +31,8 @@
 
 import CitiesCards from '../components/CitiesCards.vue';
 
-import MapWithVisitedLocations from '../components/MapWithVisitedLocations.vue';
+
+import BigMap from '../components/BigMap.vue';
 
 export default {
 
@@ -54,36 +46,23 @@ export default {
 
   components: {
     CitiesCards,
-    MapWithVisitedLocations
+    BigMap
 
   },
   mounted() {
 
-    // fetch('./cities.json')
-    //   .then(archivo => archivo.json())
-    //   .then(resultadoFinal => {
-    //     console.log(resultadoFinal);
-    //     this.blogsArray = resultadoFinal;
-    //     console.log("BlogsArray from Homeview mounted(): ");
-    //     console.log(this.blogsArray);
-
-    //   });
-
+    const OPEN_WEATHER_API_KEY = "";
+    //Fetching all the blogs from the Database:
     fetch('http://localhost:8888/')
       .then(res => res.json())
       .then(blogs => {
-        console.log("This is the fetched data from the Database on the local server: ");
-        console.log(blogs);
         this.blogsArray = blogs;
-        })
+      })
     }
   ,
   methods: {
     displayDetail(event) {
       this.id = event;
-      alert(`You want to see the detail of card id: ${this.id}`);
-  
-
     }
 
   }
@@ -110,8 +89,6 @@ export default {
 }
 
 .my-cards {
-  /* display: grid;
-  grid-template-columns: 20px 1fr 20px; */
   background-color: rgb(214, 214, 214);
   overflow: auto;
   white-space: nowrap;

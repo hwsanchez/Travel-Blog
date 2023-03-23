@@ -10,13 +10,13 @@
 <script>
 import NavBar from "./components/NavBar.vue";
 
-import MapWithVisitedLocations from "./components/MapWithVisitedLocations.vue"
+import BigMap from "./components/BigMap.vue"
 import CitiesCards from "./components/CitiesCards.vue"
 import Footer from "./components/Footer.vue";
 export default {
   components: {
     NavBar,
-    MapWithVisitedLocations,
+    BigMap,
     CitiesCards,
     Footer
   }

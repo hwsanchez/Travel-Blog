@@ -1,8 +1,5 @@
 <template>
 
-  
-
-
   <nav class="my-navbar" role="navigation" aria-label="main navigation">
 
     <div class="navbar-left">
@@ -21,7 +18,7 @@
         
           <ul>
             <li> <RouterLink  to="/about">
-                  <a>About</a>
+                  <a>Contact</a>
                 </RouterLink>
             </li>
 
@@ -81,12 +78,12 @@ export default {
   },
   methods: {
     handleBurgerClick() {
-      // navbarLinks.classList.toggle('active')
+    
       
       if (this.burgerChecked) {
 
         this.burgerChecked = false;
-        // I need to set add this line when the screen is full screen (mediaquery), but how??
+       
         document.getElementById("hamburger-menu-checkbox").checked = false;
 
       }
@@ -99,13 +96,11 @@ export default {
      
     },
      myScreenChangeEventHandler(e) {
-      // your code for handling screen resize...
-
+      //code for handling screen resize:
         this.screenSize = window.innerWidth;
        if (this.screenSize > 500) {
          document.getElementById("hamburger-menu-checkbox").checked = false;
-         this.burgerChecked = false;
-          
+         this.burgerChecked = false;   
         }
     }
   },
@@ -117,16 +112,10 @@ export default {
 
 <style scoped>
 
-
-
-
-
 .my-navbar {
   display: flex;
   justify-content: space-between;
- 
   background-color: #333;
-
   min-height: 80px;
 }
 
@@ -152,10 +141,7 @@ export default {
 }
 
 .navbar-links {
-  /* background-color: blueviolet; */
   display: flex;
-  
-  
 }
 
 .navbar-links ul {
@@ -181,25 +167,10 @@ export default {
 
 }
 
-/* .responsive a {
-  display: block;
- 
-}
-
-.responsive ul {
-   margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-} */
-
-
 /* Burger Menu Icon Starts HERE: */
 
 .burger {
   display: none;
-  /* background-color: pink; */
-  /* display: none; THIS DOESNT WORK!!!!*/
 
 }
 
@@ -301,7 +272,7 @@ export default {
 }
 
 
-@media  (max-width: 500px) {
+@media  (max-width: 550px) {
 
   .navbar-links a {
     display: none;
@@ -310,7 +281,6 @@ export default {
   .burger {
     display: flex; 
   } 
-
 }
 
 </style>

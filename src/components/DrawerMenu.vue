@@ -4,7 +4,7 @@
             
               <ul>
                 <li> <RouterLink  to="/about">
-                      <a @click="$emit('closeBurger')">About</a>
+                      <a @click="$emit('closeBurger')">Contact</a>
                     </RouterLink>
                 </li>
 
@@ -45,10 +45,6 @@ export default {
   justify-content: center;
   padding-bottom: 10px;
   background-color: #333;
-
-  /* How do I make the transition??? */
-  /* transition-duration: 1s;
-  transition-timing-function:cubic-bezier(0.7, 0.3, 1, 1); */
 }
 
 .drawer li {
@@ -60,11 +56,6 @@ color: white;
 }
 .drawer a:hover {
 color: grey;
-  
 }
-
-
-
-
 
 </style>

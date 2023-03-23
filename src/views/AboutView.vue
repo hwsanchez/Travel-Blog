@@ -1,56 +1,67 @@
 <template>
 
-<div class="hero">
-     <div class="box">
-         <div class="about">
-             <h1>About us</h1>
-           
-             <img class="chefPix"
-             src="https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F5ba0f548-04cf-11eb-910e-49261a8ea333.jpg?crop=2992%2C1995%2C0%2C0" alt="chef">
-             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? </p>
-             <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut. </p> <br>
-             <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? </p>
-             <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium perferendis sunt. Blanditiis error molestias, fuga dicta ut, modi debitis dignissimos ad tempore molestiae pariatur temporibus obcaecati dolor neque rem? </p>
-        
-          </div>
-     </div>
-  </div>
+<div class="wrapper">
+     
+             <h1 class="title">Contact</h1>
+
+            <div class="columns" >
+                <div class="column is-one-third is-warning" id="responsive">
+                    <img class="my-pic" src="../assets/images/hugo3.jpg" alt="hugo's pic">
+                </div>  
+
+                <div class="column is-two-thirds">
+
+                    <div class="contact-box">
+
+                 
+                        <h1 class="subtitle has-text-weight-medium mb-3">Hugo W Sanchez</h1>   
+                        <ul>
+                            <li>Straße 100, 23507 Hamburg</li>
+                            <li><a href="">myemail@me.come  </a></li>
+                            <li>+49 123 5774034</li>
+                        
+                        </ul>          
+                    </div>
+                </div>       
+            </div>
+            
+            <div class="">
+                <p> This is a my final project for my Fullstack Developer course at Hamburg Coding School: <strong> My Travel Blog.</strong></p>       
+            </div>  
+</div>
 </template>
 
 <style scoped>
 
-.about {
-    font-size: 40px;
-
-
+.wrapper {
+    margin: 10px 10px 20px 20px;
+    height: 500px;
 }
 
-.about>h1 {
-    margin-bottom: 30px;
-
-}
-
-.about>p {
-    font-size: 20px;
-    color: black;
-    text-align: justify;
-}
-
-.chefPix {
-
-
-    width: 300px;
+.my-pic {
+    width: 350px;
     border: 1px solid rgb(124, 124, 124);
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    float: left;
     margin-right: 2rem;
 
 }
 
-.chefPix>img {
-    display: inline-block;
+.contact-box {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
 }
+
+@media (max-width: 600px) {
+
+    #responsive img {
+        width: 350px;
+        margin: 0 auto;
+    }
+}
+
 </style>
 

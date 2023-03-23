@@ -1,0 +1,120 @@
+<template>
+
+
+<!-- Big World Map with blog locations: -->
+
+  <MapboxMap
+      style="height: 400px"
+      access-token=""
+      map-style="mapbox://styles/mapbox/streets-v11"
+      :center="[MostRecentBlogLongitude, MostRecentBlogLatitude]"
+      :zoom="3">
+    <template v-for="(ciudades, index) in geoLocArray" :key="ciudades.id">
+     
+      <!-- <MapboxMarker :lng-lat="[ciudades.lon, ciudades.lat]" /> -->
+      <MapboxMarker v-if="ciudades.id !== 0" :lng-lat="[ciudades.lon, ciudades.lat]" popup>
+                        <template v-slot:popup>
+                           
+                            <p class="title is-6">{{ ciudades.blogName }}</p>
+                            <p class="subtitle is-6">{{ ciudades.blogDate }}</p>
+                        
+                          
+                          <div class="popUpImage">
+                            <img :src="ciudades.authorPic" alt="pic">
+                          </div>
+                        
+                     
+                          <p class="my-subtitle"> {{ ciudades.authorName }}</p>
+                          <RouterLink :to="'/post/' + ciudades.id" :data-id="ciudades.id" @click="$emit('popupClicked',ciudades.id)">link to blog</RouterLink>
+                        </template>
+        </MapboxMarker>
+    </template>
+       
+  </MapboxMap>
+
+</template>
+
+<script>
+
+import { MapboxMap, MapboxMarker} from '@studiometa/vue-mapbox-gl';
+
+export default {
+  data: function () {
+    return {
+      OPEN_WEATHER_API_KEY: "3a42576b87aa5574c7be70803ff1f679",
+      geoLocArray: [{
+        id: 0,
+        blogName: "",
+        blogDate: "",
+        authorPic: "",
+        authorName: "",
+        lon: null,
+        lat: null
+      }],
+      OPEN_WEATHER_API_KEY: "3a42576b87aa5574c7be70803ff1f679"
+    }
+  },
+  props: {
+    cities: Array
+  },
+  components: {
+    MapboxMap,
+    MapboxMarker
+  },
+  watch: {
+    cities() {
+
+       for (let i = 0; i < this.cities.length; i++) {
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${this.cities[i].city}&limit=1&appid=${this.OPEN_WEATHER_API_KEY}`)
+          .then(res => res.json())
+          .then(locations => {
+            this.geoLocArray.push({ id: this.cities[i].id, blogName: this.cities[i].title, blogDate: this.cities[i].visitingDate, authorPic: this.cities[i].authorsImage, authorName: this.cities[i].author, lon: locations[0].lon, lat: locations[0].lat });
+          })
+
+
+      }
+    }
+  },
+  computed: {
+
+    MostRecentBlogLongitude() {
+      return this.geoLocArray[this.geoLocArray.length - 1].lon
+    },
+    MostRecentBlogLatitude() {
+      return this.geoLocArray[this.geoLocArray.length - 1].lat
+    }
+  },
+
+  methods: {
+    alertCard(event) {
+      alert(`Popup clicked! Id: ${event}`)
+    }
+  },
+
+}
+
+</script>
+
+
+<style scoped>
+.popUpImage {
+
+  width: 80px;
+
+  /* float: left; */
+}
+
+.popUpBottom {
+
+  margin-left: 0;
+}
+
+p {
+  color: #333;
+}
+
+.my-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+}
+</style>
