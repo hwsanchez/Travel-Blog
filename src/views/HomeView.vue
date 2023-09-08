@@ -28,11 +28,12 @@
 </template>
 
 <script>
-
+// import config from '../config.js'
 import CitiesCards from '../components/CitiesCards.vue';
-
-
 import BigMap from '../components/BigMap.vue';
+
+// const myMapboxToken = config.mapboxToken;
+// const myOpenWeatherKey = config.openWeatherKey;
 
 export default {
 
@@ -51,7 +52,6 @@ export default {
   },
   mounted() {
 
-    const OPEN_WEATHER_API_KEY = "";
     //Fetching all the blogs from the Database:
     fetch('http://localhost:8888/')
       .then(res => res.json())

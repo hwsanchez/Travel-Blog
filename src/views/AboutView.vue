@@ -16,9 +16,9 @@
                  
                         <h1 class="subtitle has-text-weight-medium mb-3">Hugo W Sanchez</h1>   
                         <ul>
-                            <li>Straße 100, 23507 Hamburg</li>
-                            <li><a href="">myemail@me.come  </a></li>
-                            <li>+49 123 5774034</li>
+                            <li>Bussardweg 24, 22527 Hamburg</li>
+                            <li><a href="">hwsanchez.poreda@gmail.com</a></li>
+                            <li>+49 157 85145890</li>
                         
                         </ul>          
                     </div>

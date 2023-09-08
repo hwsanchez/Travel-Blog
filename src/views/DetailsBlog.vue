@@ -55,11 +55,25 @@
 
               <div class="blog-middle">
 
-                  <div class="columns is-full">
+                  <div class="map-text-container"> 
 
-                      <div class="column is-two-thirds">
+                      <div > 
+                                    <div div class="map-container">
 
-                                    <p>
+                                                <MapboxMap
+                                                  style="height: 300px;"
+                                                  access-token="pk.eyJ1IjoiaHdzYW5jaGV6IiwiYSI6ImNsY29pdmxrazFqcHkzcHA4dXBnYmdiYWgifQ.9VHhEbISmVUsxq_GY8OsZA"
+                                                  map-style="mapbox://styles/mapbox/streets-v11"
+                                                  :center="[geoLoc.lon, geoLoc.lat]"
+                                                  :zoom="9">
+                                                  <MapboxMarker :lng-lat="[geoLoc.lon, geoLoc.lat]"/>
+
+                                                </MapboxMap>
+                        
+                                   </div>
+                                      <!-- end map container -->
+
+                                    <p class="texto">
                                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laboriosam nemo reiciendis et facere ab veritatis doloribus modi pariatur, rerum possimus earum a ducimus dolorem veniam hic quo neque aut.
                                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat earum sit est voluptatum harum repudiandae minima ea odio cum! Unde qui magni veritatis amet possimus ipsam blanditiis cupiditate eos fuga.
                                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab facere placeat aliquid rem dolorum. 
@@ -73,39 +87,34 @@
                               
                       </div>
 
-                          <div class="column is-one-third">
+
+                                 
+
+                          
 
 
-                              <div div class="map-container"> 
-
-                                          <MapboxMap
-                                            style="height: 300px; width: 400px"
-                                            access-token=""
-                                            map-style="mapbox://styles/mapbox/streets-v11"
-                                            :center="[geoLoc.lon, geoLoc.lat]"
-                                            :zoom="9">
-                                            <MapboxMarker :lng-lat="[geoLoc.lon, geoLoc.lat]"/>
-
-                                          </MapboxMap>
-                        
-                              </div>
-                                <!-- end map container -->
+                              
+                              
                           
                         
-                          </div>
+                         
          
                       </div>           
               </div>
-                  <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laboriosam nemo reiciendis et facere ab veritatis doloribus modi pariatur, rerum possimus earum a ducimus dolorem veniam hic quo neque aut.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat earum sit est voluptatum harum repudiandae minima ea odio cum! Unde qui magni veritatis amet possimus ipsam blanditiis cupiditate eos fuga.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab facere placeat aliquid rem dolorum. 
-                  </p> 
+
+              <div class="text-bottom">
+              <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laboriosam nemo reiciendis et facere ab veritatis doloribus modi pariatur, rerum possimus earum a ducimus dolorem veniam hic quo neque aut.
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat earum sit est voluptatum harum repudiandae minima ea odio cum! Unde qui magni veritatis amet possimus ipsam blanditiis cupiditate eos fuga.
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab facere placeat aliquid rem dolorum. 
+                    </p> 
               
-                  <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab facere placeat aliquid rem dolorum. Aspernatur obcaecati voluptas temporibus cumque sit quos nihil et eum, accusantium, iure adipisci, voluptatem ullam sequi.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laboriosam nemo reiciendis et facere ab veritatis doloribus modi pariatur, rerum possimus earum a ducimus dolorem veniam hic quo neque aut.
-                  </p>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab facere placeat aliquid rem dolorum. Aspernatur obcaecati voluptas temporibus cumque sit quos nihil et eum, accusantium, iure adipisci, voluptatem ullam sequi.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laboriosam nemo reiciendis et facere ab veritatis doloribus modi pariatur, rerum possimus earum a ducimus dolorem veniam hic quo neque aut.
+                    </p>
+              </div>
+                  
            
 
             </div>
@@ -119,8 +128,11 @@
 
 <script>
 
-
+//import config from '../config.js';
 import { MapboxMap, MapboxMarker } from '@studiometa/vue-mapbox-gl';
+
+// const myMapboxToken = config.mapboxToken;
+// const myOpenWeatherKey = config.openWeatherKey;
 
 export default {
 
@@ -137,7 +149,7 @@ export default {
         authorsEmail: "",
         blog: ""
       }],
-      OPEN_WEATHER_API_KEY: "",
+      OPEN_WEATHER_API_KEY: "3a42576b87aa5574c7be70803ff1f679",
       geoLoc: {
         lon: 0,
         lat: 0
@@ -173,6 +185,10 @@ export default {
 
 <style scoped>
 
+.text-bottom {
+  padding-bottom: 35px;
+}
+
 .back-home-button {
 
   padding: 14px;
@@ -207,7 +223,7 @@ export default {
  
   }
   .author-info img {
- 
+
   border: solid black 1px; 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -218,17 +234,24 @@ export default {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+.map-text-container {
+  display:flex;
+
+}
 .map-container {
   border: solid 1px black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 400px;
+  float: right;
 }
  
   
 
 
 
-@media (max-width: 750px) {
+
+@media (max-width: 550px) {
 
   .details-image {
   
@@ -238,13 +261,18 @@ export default {
     padding-bottom: 20px;
   }
 
+
+
   .map-container {
     margin: 0 auto;
-    border: none;
-    box-shadow: none;
+    /* border: none;
+    box-shadow: none; */
 
   }
+.map-text-container {
+  display:block;
 
+}
  
   .my-header {
 
@@ -257,7 +285,7 @@ export default {
 
 
 }
-@media (min-width: 751px) {
+@media (min-width: 551px) {
 
   .details-image {
   
@@ -271,6 +299,7 @@ export default {
       width:60%;
 
   }
+ 
 
 
 }

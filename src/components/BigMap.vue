@@ -5,7 +5,7 @@
 
   <MapboxMap
       style="height: 400px"
-      access-token=""
+      access-token="pk.eyJ1IjoiaHdzYW5jaGV6IiwiYSI6ImNsY29pdmxrazFqcHkzcHA4dXBnYmdiYWgifQ.9VHhEbISmVUsxq_GY8OsZA"
       map-style="mapbox://styles/mapbox/streets-v11"
       :center="[MostRecentBlogLongitude, MostRecentBlogLatitude]"
       :zoom="3">
@@ -36,7 +36,9 @@
 
 <script>
 
-import { MapboxMap, MapboxMarker} from '@studiometa/vue-mapbox-gl';
+import { MapboxMap, MapboxMarker } from '@studiometa/vue-mapbox-gl';
+// import config from '../config.js';
+// const myOpenWeatherKey = config.openWeatherKey;
 
 export default {
   data: function () {
@@ -78,10 +80,14 @@ export default {
   computed: {
 
     MostRecentBlogLongitude() {
-      return this.geoLocArray[this.geoLocArray.length - 1].lon
+      //This is suppose to return the ccordinates for the city from the most recent post
+      //return this.geoLocArray[this.geoLocArray.length - 1].lon
+      //These are the coordinates for the center of Switzerland: looks nicer!
+      return 8.23
     },
     MostRecentBlogLatitude() {
-      return this.geoLocArray[this.geoLocArray.length - 1].lat
+      //return this.geoLocArray[this.geoLocArray.length - 1].lat
+      return 46.79
     }
   },
 
