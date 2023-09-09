@@ -16,7 +16,7 @@
                         <template v-slot:popup>
                            
                             <p class="title is-6">{{ ciudades.blogName }}</p>
-                            <p class="subtitle is-6">{{ ciudades.blogDate }}</p>
+                            <p class="subtitle is-7">{{ ciudades.blogDate }}</p>
                         
                           
                           <div class="popUpImage">
