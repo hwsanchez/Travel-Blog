@@ -11,7 +11,7 @@
                     
                             <div class="card-image city-image">
                               <figure class="image is-4by3">
-                                <img :src="blog.cityImage">
+                                <img :src="blog.cityimage">
                               </figure>
                             </div>
 
@@ -22,7 +22,7 @@
                           
                                 <p class="card-title">{{ blog.title }}</p>
                            
-                                <time datetime="2016-1-1">{{ blog.visitingDate }}</time>
+                                <time datetime="2016-1-1">{{ blog.visitingdate }}</time>
                         
                                
                            
@@ -32,14 +32,14 @@
                                
                                     <div class="media-left">
                                       <figure class="image is-48x48">
-                                        <img :src="blog.authorsImage" alt="image">
+                                        <img :src="blog.authorsimage" alt="image">
                                       </figure>
                                     </div>
                                   <div class="media-content">
 
                                     <div class="content">
                                       <p class="title is-7">{{ blog.author }}</p>
-                                      <a href="" class="author-email">{{ blog.authorsEmail }}</a>
+                                      <a href="" class="author-email">{{ blog.authorsemail }}</a>
                                  
                                 
                                     </div>

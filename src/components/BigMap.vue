@@ -43,7 +43,7 @@ import { MapboxMap, MapboxMarker } from '@studiometa/vue-mapbox-gl';
 export default {
   data: function () {
     return {
-      OPEN_WEATHER_API_KEY: "3a42576b87aa5574c7be70803ff1f679",
+      OPEN_WEATHER_API_KEY: import.meta.env.VITE_APP_OPEN_WEATHER_API_KEY,
       geoLocArray: [{
         id: 0,
         blogName: "",
@@ -52,8 +52,7 @@ export default {
         authorName: "",
         lon: null,
         lat: null
-      }],
-      OPEN_WEATHER_API_KEY: "3a42576b87aa5574c7be70803ff1f679"
+      }]      
     }
   },
   props: {
@@ -70,7 +69,7 @@ export default {
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${this.cities[i].city}&limit=1&appid=${this.OPEN_WEATHER_API_KEY}`)
           .then(res => res.json())
           .then(locations => {
-            this.geoLocArray.push({ id: this.cities[i].id, blogName: this.cities[i].title, blogDate: this.cities[i].visitingDate, authorPic: this.cities[i].authorsImage, authorName: this.cities[i].author, lon: locations[0].lon, lat: locations[0].lat });
+            this.geoLocArray.push({ id: this.cities[i].id, blogName: this.cities[i].title, blogDate: this.cities[i].visitingdate, authorPic: this.cities[i].authorsimage, authorName: this.cities[i].author, lon: locations[0].lon, lat: locations[0].lat });
           })
 
 
