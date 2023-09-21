@@ -66,7 +66,7 @@ export default {
     cities() {
 
        for (let i = 0; i < this.cities.length; i++) {
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${this.cities[i].city}&limit=1&appid=${this.OPEN_WEATHER_API_KEY}`)
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${this.cities[i].city}&limit=1&appid=${this.OPEN_WEATHER_API_KEY}`)
           .then(res => res.json())
           .then(locations => {
             this.geoLocArray.push({ id: this.cities[i].id, blogName: this.cities[i].title, blogDate: this.cities[i].visitingdate, authorPic: this.cities[i].authorsimage, authorName: this.cities[i].author, lon: locations[0].lon, lat: locations[0].lat });

@@ -190,7 +190,7 @@ export default {
     try {
       //Fetching the coordinates from Open Weather API:
       const newResponse = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${this.blogsArray[0].city}&limit=1&appid=${this.OPEN_WEATHER_API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${this.blogsArray[0].city}&limit=1&appid=${this.OPEN_WEATHER_API_KEY}`
       );
       const newResult = await newResponse.json();
       this.geoLoc.lon = await newResult[0].lon;
