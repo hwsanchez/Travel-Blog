@@ -131,6 +131,11 @@ export default {
 
 }
 
+.card-image:first-child img{
+  border-top-left-radius: unset !important;
+  border-top-right-radius: unset !important;
+}
+
 .card-wrapper {
   padding: 20px;
 }
