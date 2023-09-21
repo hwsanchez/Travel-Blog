@@ -7,7 +7,8 @@
 
               <div class="card-wrapper" :data-id="blog.id" @click="$emit('cardClicked', blog.id)">
                 
-                <div class="card my-card" >
+                <!-- <div class="card my-card" > -->
+                <div class="my-card">
                     
                             <div class="card-image city-image">
                               <figure class="image is-4by3">
@@ -15,7 +16,8 @@
                               </figure>
                             </div>
 
-                            <div class="card-content my-card-content">
+                            <!-- <div class="card-content my-card-content"> -->
+                            <div class="my-card-content">
                       
                       
 
@@ -98,9 +100,16 @@ export default {
   
 }
 
+.my-card-content {
+
+  padding: 14px;
+}
+
 
 .my-card-content time {
   font-size:x-small;
+  
+  
 
 }
 
@@ -110,6 +119,10 @@ export default {
 
 .my-card {
   height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .my-card:hover {
