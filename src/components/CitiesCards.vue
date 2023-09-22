@@ -1,134 +1,74 @@
 <template>
-   
-          <div class="my-card-container">
-          
-            <template v-for="(blog) in cities" :key="blog.id">
-                
+  <div class="my-card-container">
+    <template v-for="blog in cities" :key="blog.id">
+      <div class="card-wrapper" :data-id="blog.id" @click="$emit('cardClicked', blog.id)">
+        
+        
+        <!-- New Bulma Card: -->
 
-              <div class="card-wrapper" :data-id="blog.id" @click="$emit('cardClicked', blog.id)">
-                
-                <!-- <div class="card my-card" > -->
-                <div class="my-card">
-                    
-                            <div class="card-image city-image">
-                              <figure class="image is-4by3">
-                                <img :src="blog.cityimage">
-                              </figure>
-                            </div>
-
-                            <!-- <div class="card-content my-card-content"> -->
-                            <div class="my-card-content">
-                      
-                      
-
-                          
-                                <p class="card-title">{{ blog.title }}</p>
-                           
-                                <time datetime="2016-1-1">{{ blog.visitingdate }}</time>
-                        
-                               
-                           
-                           
-
-                              <div class="media">
-                               
-                                    <div class="media-left">
-                                      <figure class="image is-48x48">
-                                        <img :src="blog.authorsimage" alt="image">
-                                      </figure>
-                                    </div>
-                                  <div class="media-content">
-
-                                    <div class="content">
-                                      <p class="title is-7">{{ blog.author }}</p>
-                                      <a href="" class="author-email">{{ blog.authorsemail }}</a>
-                                 
-                                
-                                    </div>
-
-
-                              
-
-
-                                
-                
-                                  </div>
-
-                                </div>
-
-                            </div>
-                           <!-- End of card-content container  -->
-
-                        </div> 
-                       <!-- End of card container -->
-                
-                
+        <div class="card my-card" style="max-width: 350px">
+          <div class="card-image">
+            <figure class="image is-5by4">
+              <img :src="blog.cityimage" alt="Placeholder image" />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img :src="blog.authorsimage" alt="Author's image" />
+                </figure>
               </div>
+              <div class="media-content" >
+                <p style="font-size: 70%;"><strong>{{ blog.title }}</strong></p>
+                <p style="font-size: 50%;">{{ blog.author }}</p>
+                <p style="font-size: 50%; color:blue;">{{ blog.authorsemail }}</p>
+              </div>
+            </div>
 
-            </template>
-                 
-          </div>          
+            <div class="content">
+              <time datetime="2016-1-1">{{ blog.visitingdate }}</time>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </template>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-
     cities: {
       type: Array,
-      default: []
-    }
+      default: [],
+    },
   },
 
   methods: {
     displayId(event) {
       alert(`Card id: ${event}`);
-    }
-  }
-}
-
+    },
+  },
+};
 </script>
 
-
 <style scoped>
-
-.card-title {
-  font-size: small;
-  font-weight: 800;
-  color: black;
-  
-}
-
-.my-card-content {
-
-  padding: 14px;
-}
-
-
-.my-card-content time {
-  font-size:x-small;
-  
-  
-
-}
-
-.author-email {
-  font-size: x-small;
-}
 
 .my-card {
   height: 100%;
   background-color: white;
   border-radius: 5px;
-  
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .my-card:hover {
-  transform: translate3D(0,-1px,0) scale(1.09);
-  transition: 300ms;
+  transform: translate3D(0, -1px, 0) scale(1.09);
+  transition: 600ms;
   cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
 }
 
 .my-card-container {
@@ -136,15 +76,13 @@ export default {
 }
 
 .card-image img {
-
   float: left;
   width: 100px;
-  height:100px;
+  height: 100px;
   object-fit: cover;
-
 }
 
-.card-image:first-child img{
+.card-image:first-child img {
   border-top-left-radius: unset !important;
   border-top-right-radius: unset !important;
 }
@@ -154,10 +92,7 @@ export default {
 }
 
 .media-content {
-
   inline-size: 100px;
   overflow-wrap: break-all;
-  
 }
-
 </style>

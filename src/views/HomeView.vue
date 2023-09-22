@@ -52,10 +52,12 @@ export default {
 
       try {
         // Fetch data from Supabase table
+
         const { data, error } = await supabase.from('blogs').select('*');
         if (error) {
           console.error(error);
         } else {
+          
           blogsArray.value = data; // Assign fetched data to blogsArray using .value
           console.log('Fetched data:', blogsArray.value);
         }

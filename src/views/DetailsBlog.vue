@@ -2,7 +2,7 @@
   <div class="hero is-fullheight has-background-grey">
     <div class="back-home-button">
       <RouterLink :to="'/'">
-        <button class="button is-dark">
+        <button class="button is-dark my-button">
           <span class="icon">
             <i class="fa-solid fa-arrow-left"></i>
           </span>
@@ -215,6 +215,15 @@ export default {
 </script>
 
 <style scoped>
+
+.my-button:hover {
+
+  transform: translate3D(0, -1px, 0) scale(1.03);
+  transition: 400ms;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+
+}
 .text-bottom {
   padding-bottom: 35px;
 }
