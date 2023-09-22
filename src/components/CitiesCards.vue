@@ -4,33 +4,7 @@
       <div class="card-wrapper" :data-id="blog.id" @click="$emit('cardClicked', blog.id)">
         
         
-        <!-- New Bulma Card: -->
-
-        <!-- <div class="card my-card" style="max-width: 350px">
-          <div class="card-image">
-            <figure class="image is-5by4">
-              <img :src="blog.cityimage" alt="Placeholder image" />
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img :src="blog.authorsimage" alt="Author's image" />
-                </figure>
-              </div>
-              <div class="media-content" >
-                <p style="font-size: 70%;"><strong>{{ blog.title }}</strong></p>
-                <p style="font-size: 50%;">{{ blog.author }}</p>
-                <p style="font-size: 50%; color:blue;">{{ blog.authorsemail }}</p>
-              </div>
-            </div>
-
-            <div class="content">
-              <time datetime="2016-1-1">{{ blog.visitingdate }}</time>
-            </div>
-          </div>
-        </div> -->
+       
 
         <!-- New Vanilla CSS Card: -->
 
@@ -45,8 +19,8 @@
           />
           <div class="content-text">
             <p class="card-title"><strong>{{ blog.title }}</strong></p>
-            <p>{{ blog.author }}</p>
-            <p>{{ blog.authorsemail }}</p>
+            <div>{{ blog.author }}</div>
+            <div style="color:rgb(2, 2, 161)">{{ blog.authorsemail }}</div>
             <p>{{ blog.visitingdate }}</p>
           </div>
         </div>
@@ -77,14 +51,15 @@ export default {
 <style scoped>
 
 .card {
-  width: 200px; /* Set a fixed width for all cards */
-  height: 150px; /* Set a fixed height for all cards */
+  min-width: 200px; /* Set a fixed width for all cards */
+  min-height: 250px; /* Set a fixed height for all cards */
   background-color: white;
   border-radius: 8px;
+  
 }
     .image {
       width: 100%;
-      height: 100%;
+      height: 130px;
       object-fit: cover;
     }
     .content {
@@ -96,7 +71,7 @@ export default {
       height: 100%;
       height: 75px;
       object-fit: cover;
-      padding-right: 30px;
+      padding-right: 5px;
     }
 
     .card-title {
@@ -104,11 +79,11 @@ export default {
     }
 
 .content-text {
-  font-size: small;
-  padding-right: 10px;
+  font-size: 70%;
+ 
 }
 
-.my-card:hover {
+.card:hover {
   transform: translate3D(0, -1px, 0) scale(1.09);
   transition: 600ms;
   cursor: pointer;
@@ -119,24 +94,12 @@ export default {
   display: flex;
 }
 
-.card-image img {
-  float: left;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
 
-.card-image:first-child img {
-  border-top-left-radius: unset !important;
-  border-top-right-radius: unset !important;
-}
+
 
 .card-wrapper {
-  padding: 20px;
+  padding: 15px;
 }
 
-.media-content {
-  inline-size: 100px;
-  overflow-wrap: break-all;
-}
+
 </style>
