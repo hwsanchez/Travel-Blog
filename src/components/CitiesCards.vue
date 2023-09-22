@@ -21,7 +21,7 @@
             <p class="card-title"><strong>{{ blog.title }}</strong></p>
             <div>{{ blog.author }}</div>
             <div style="color:rgb(2, 2, 161)">{{ blog.authorsemail }}</div>
-            <p>{{ blog.visitingdate }}</p>
+            <div>{{ niceDate(blog) }}</div>
           </div>
         </div>
       </div>
@@ -39,7 +39,54 @@ export default {
       default: [],
     },
   },
-
+  computed: {
+    niceDate() {
+      return (blog) => {
+        const date = blog.visitingdate.split('-');
+        let month = date[1]
+        switch (month) {
+          case '01':
+            month = "Jan"
+            break;
+          case '02':
+            month = "Feb"
+            break;
+          case '03':
+            month = "Mar"
+            break;
+          case '04':
+            month = "Apr"
+            break;
+          case '05':
+            month = "May"
+            break;
+          case '06':
+            month = "Jun"
+            break;
+          case '07':
+            month = "Jul"
+            break;
+          case '08':
+            month = "Aug"
+            break;
+          case '09':
+            month = "Sep"
+            break;
+          case '10':
+            month = "Oct"
+            break;
+          case '11':
+            month = "Nov"
+            break;
+          case '12':
+            month = "Dec"
+            break;
+          
+        }
+        return month + ' ' + date[2] +  ', ' + date[0];
+      };
+    }
+  },
   methods: {
     displayId(event) {
       alert(`Card id: ${event}`);
