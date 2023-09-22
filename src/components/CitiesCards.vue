@@ -6,7 +6,7 @@
         
         <!-- New Bulma Card: -->
 
-        <div class="card my-card" style="max-width: 350px">
+        <!-- <div class="card my-card" style="max-width: 350px">
           <div class="card-image">
             <figure class="image is-5by4">
               <img :src="blog.cityimage" alt="Placeholder image" />
@@ -30,7 +30,27 @@
               <time datetime="2016-1-1">{{ blog.visitingdate }}</time>
             </div>
           </div>
+        </div> -->
+
+        <!-- New Vanilla CSS Card: -->
+
+        <div class="card">
+        <img
+          class="image"
+          :src="blog.cityimage" alt="Card city image"
+        />
+        <div class="content">
+          <img
+            :src="blog.authorsimage" alt="Author's image"
+          />
+          <div class="content-text">
+            <p class="card-title"><strong>{{ blog.title }}</strong></p>
+            <p>{{ blog.author }}</p>
+            <p>{{ blog.authorsemail }}</p>
+            <p>{{ blog.visitingdate }}</p>
+          </div>
         </div>
+      </div>
 
       </div>
     </template>
@@ -56,12 +76,36 @@ export default {
 
 <style scoped>
 
-.my-card {
-  height: 100%;
+.card {
+  width: 200px; /* Set a fixed width for all cards */
+  height: 150px; /* Set a fixed height for all cards */
   background-color: white;
-  border-radius: 5px;
+  border-radius: 8px;
+}
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .content {
+      display: flex;
+      padding: 10px;
+    }
 
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .content img {
+      height: 100%;
+      height: 75px;
+      object-fit: cover;
+      padding-right: 30px;
+    }
+
+    .card-title {
+      margin: 0;
+    }
+
+.content-text {
+  font-size: small;
+  padding-right: 10px;
 }
 
 .my-card:hover {
