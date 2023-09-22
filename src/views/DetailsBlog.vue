@@ -276,7 +276,7 @@ export default {
   float: right;
 }
 
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
   .details-image {
     max-width: 480px;
     margin: 0 auto;
@@ -286,8 +286,7 @@ export default {
 
   .map-container {
     margin: 0 auto;
-    /* border: none;
-    box-shadow: none; */
+  
   }
   .map-text-container {
     display: block;
@@ -300,7 +299,32 @@ export default {
   .author-info {
     display: none;
   }
+} */
+
+
+@media (max-width: 550px) {
+
+  .texto {
+    padding-top: 100px;
+  }
+  /* Center the map container and header */
+  .map-container {
+    margin: 0 auto;
+    width: 90%; /* Adjust the width as needed */
+  }
+
+  .my-header {
+    margin: 0 auto;
+  }
+
+  /* Hide the author info on small screens */
+  .author-info {
+    display: none;
+  }
+
+  /* Adjust other styles as needed for small screens */
 }
+
 @media (min-width: 551px) {
   .details-image {
     max-width: 600px;
