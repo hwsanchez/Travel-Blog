@@ -37,7 +37,7 @@
 
 .wrapper {
     margin: 10px 10px 20px 20px;
-    height: 500px;
+    height: 700px;
     padding-bottom: 10px;
 }
 
