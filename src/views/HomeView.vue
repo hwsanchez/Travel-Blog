@@ -112,6 +112,7 @@ export default {
   background-color: rgb(214, 214, 214);
   overflow: auto;
   white-space: nowrap;
+  /* height: 300px; */
 
 }
 

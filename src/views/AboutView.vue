@@ -25,13 +25,15 @@
                 </div>       
             </div>
             
-            <div class="">
+            <div>
                 <p> This is a my final project for my Fullstack Developer course at Hamburg Coding School: <strong> My Travel Blog.</strong></p>       
             </div>  
 </div>
 </template>
 
 <style scoped>
+
+
 
 .wrapper {
     margin: 10px 10px 20px 20px;

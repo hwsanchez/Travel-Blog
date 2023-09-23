@@ -48,7 +48,7 @@
 
         <br />
 
-        <p class="mb-5">
+        <p class="mb-1">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat earum sit est
           voluptatum harum repudiandae minima ea odio cum! Unde qui magni veritatis amet
           possimus ipsam blanditiis cupiditate eos fuga. Lorem, ipsum dolor sit amet
@@ -60,7 +60,7 @@
 
       <div class="blog-middle">
         <div class="map-text-container">
-          <div>
+          <!-- <div> -->
             <div div class="map-container">
               <MapboxMap
                 style="height: 300px"
@@ -97,7 +97,7 @@
               amet possimus ipsam blanditiis cupiditate eos fuga. Lorem ipsum dolor sit
               amet consectetur, adipisicing elit. Ab facere placeat aliquid rem dolorum.
             </p>
-          </div>
+          <!-- </div> -->
         </div>
       </div>
 
@@ -131,8 +131,6 @@
 //import config from '../config.js';
 import { MapboxMap, MapboxMarker } from "@studiometa/vue-mapbox-gl";
 import { createClient } from "@supabase/supabase-js";
-// const myMapboxToken = config.mapboxToken;
-// const myOpenWeatherKey = config.openWeatherKey;
 
 export default {
   data() {
@@ -159,10 +157,7 @@ export default {
   },
 
   async mounted() {
-    //Fetching the data for the Dababase and the coordinates from the city (Localhost version):
-    //  const response = await fetch(`http://localhost:8888/detail/${this.$route.params.id}`);
-    //  const result = await response.json();
-    //  this.blogsArray = await result;
+  
 
     //  Supabase version:
     const supabaseUrl = import.meta.env.VITE_APP_SUPABASE_URL;
@@ -264,11 +259,10 @@ export default {
   width: 100%;
   padding-top: 30px;
   padding-bottom: 30px;
+
 }
 
-.map-text-container {
-  display: flex;
-}
+
 .map-container {
   border: solid 1px black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -276,41 +270,21 @@ export default {
   float: right;
 }
 
-/* @media (max-width: 550px) {
-  .details-image {
-    max-width: 480px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding-bottom: 20px;
-  }
 
-  .map-container {
-    margin: 0 auto;
-  
-  }
+@media (max-width: 550px) {
+
   .map-text-container {
     display: block;
   }
 
-  .my-header {
-    margin: 0 auto;
-  }
-
-  .author-info {
-    display: none;
-  }
-} */
-
-
-@media (max-width: 550px) {
-
   .texto {
-    padding-top: 100px;
+    padding-top: 30px;
   }
   /* Center the map container and header */
   .map-container {
     margin: 0 auto;
     width: 90%; /* Adjust the width as needed */
+    float: none;
   }
 
   .my-header {
